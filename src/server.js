@@ -1,8 +1,11 @@
 import express from 'express';
 import configViewEngine from './configs/viewEngine';
 
+require('dotenv').config();
+
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000;
+console.log('check port: ', port)
 
 configViewEngine(app);
 
@@ -10,7 +13,7 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
 })
 app.get('/about', (req, res) => {
-    res.render('index.html');
+    res.send("tui là Nhun");
 })
 
 app.listen(port, () => {
