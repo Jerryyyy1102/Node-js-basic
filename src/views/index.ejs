@@ -3,16 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nodejsbasic</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
+
 <body>
-    <h1>đây là ejs</h1>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
 
-    <%= dataUser %>
+    <div style="padding-left:16px">
+        <h2>List users:</h2>
+        <table id="customers">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>
+                        Last Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < dataUser.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= dataUser[i].id %>
+                        </td>
+                        <td>
+                            <%= dataUser[i].firstName %>
+                        </td>
+                        <td>
+                            <%= dataUser[i].lastName %>
+                        </td>
+                        <td>
+                            <%= dataUser[i].email %>
+                        </td>
+                        <td>
+                            <%= dataUser[i].address %>
+                        </td>
+                        <td>
+                            <button type="button">
+                                <a href="/detail/user/<%=dataUser[i].id %>" target="_blank">Detail</a>
 
-        <img src="\image\h1.jpg" style="width: 100%;" />
+                            </button>
+                            <button type="button">
+                                Delete
+                            </button>
+                            <button type="button">
+                                Update
+                            </button>
+
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+
+        </table>
+
+
+    </div>
+
 </body>
 
 </html>

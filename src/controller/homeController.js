@@ -9,8 +9,7 @@ let getHomepage = (req, res) => {
         function (err, results, fields) {
 
             data = results.map((row) => { return row });
-            console.log(results[0]);
-            return res.render('index.ejs', { dataUser: JSON.stringify(data) })
+            return res.render('index.ejs', { dataUser: data, test: 'truyền biến (đơn giản là thêm thuộc tính)' })
         }
     );
 
