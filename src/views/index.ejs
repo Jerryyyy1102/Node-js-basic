@@ -9,6 +9,7 @@
 
 
 <body>
+
     <div class="topnav">
         <a class="active" href="#home">Home</a>
         <a href="#news">News</a>
@@ -75,6 +76,34 @@
         </table>
 
 
+    </div>
+
+    <div class="create-user-container">
+        <form action="/create-new-user" method="POST">
+            <div><b> Create a new user</b>
+
+            </div>
+            <div>
+                <label>First Name: </label>
+                <input type="text" name="firstName" />
+            </div>
+            <div>
+                <label>Last Name: </label>
+                <input type="text" name="lastName" />
+            </div>
+            <div>
+                <label>Email: </label>
+                <input type="email" name="email" />
+            </div>
+            <div>
+                <label>Address: </label>
+                <input type="text" name="address" />
+            </div>
+            <div>
+                <button type="submit" style="margin-top: 5px;cursor: pointer;"> Submit</button>
+            </div>
+
+        </form>
     </div>
 
 </body>
